@@ -1,0 +1,19 @@
+        .thumbnail{
+            height: 200px;
+            width:200px;
+        }
+        
+        #zoomImage{
+            height:600px;
+            width:600px;
+        }
+        
+        #list{
+            width:49%;
+            display:inline-block;
+        }
+        
+        #zoom{
+            width:49%;
+            display:inline-block;
+        }
