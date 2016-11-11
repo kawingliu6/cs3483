@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Page Title</title>
+    <style>
+        body,html{
+            height:100%;
+        }
+        #preview{
+            height:450px;
+        }
+        #search{
+            background-color:green;
+            display:inline-block;
+            width:45%;
+            height: 100%;
+        }
+        #result{
+            background-color:red;
+            display:inline-block;
+            width:45%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="search">
+<input type="file" accept="image/*" onchange="searchProduct(event)">
+
+</br>
+<img id="preview"/>
+</div>
+
+<div id="result">
+    
+</div>
+</body>
+
+<script src="javascript/search.js"></script>
+</html>
