@@ -16,19 +16,20 @@
   </style>
 </head>
 <body>
-
-  <div class="demo-frame">
-    <div class="demo-container">
+      <div>
       <video id="video" width="320" height="240" preload autoplay loop muted></video>
       <canvas id="canvas" width="320" height="240"></canvas>
-    </div>
-  </div>
+      </div>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <input type="button" id="submit" value="click" />
+
 
   <script>
     window.onload = function() {
       var video = document.getElementById('video');
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
+      document.getElementById("submit").disabled = true;
 
       var tracker = new tracking.ObjectTracker('face');
       tracker.setInitialScale(4);
@@ -47,6 +48,7 @@
           context.fillStyle = "#fff";
           context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
           context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+          document.getElementById("submit").disabled = false;
         });
       });
 
