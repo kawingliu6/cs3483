@@ -24,7 +24,6 @@
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
       <input type="button" id="submit" value="click" />
-      <p id="test_output">test:</p>
 
 
   <script>
@@ -51,7 +50,6 @@
           context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
           context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
           document.getElementById("submit").disabled = false;
-          document.getElementById("test_output").innerHTML += rect.x+",";
         });
           document.getElementById("submit").disabled = true;
       });
