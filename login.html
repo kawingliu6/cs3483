@@ -24,7 +24,6 @@
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
       <input type="button" id="submit" value="click" />
-      <p id="output">test:</p>
 
 
   <script>
@@ -57,7 +56,8 @@
         });
           if (count==1) {
             document.getElementById("submit").disabled=false;
-          }document.getElementById("submit").disabled=true;
+          }else{document.getElementById("submit").disabled=true;
+          }
       });
 
       var gui = new dat.GUI();
