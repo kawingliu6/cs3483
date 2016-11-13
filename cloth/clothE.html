@@ -2,12 +2,82 @@
 
 <html>
 <head>
-    <title>Page Title</title>
+    <title>Cloth E</title>
+   <link rel="stylesheet" href="../css/navBar.css">
+    <link rel="stylesheet" href="../css/productDetails.css">
+    <style>
+        #leftFrame{
+            float: left;
+            width: 50%;
+            text-align: right;
+        }
+
+        #rightFrame{
+            float: right;
+            width: 50%;
+     
+        }
+        
+    </style>
 </head>
 
 <body>
+    <!-- navigation bar-->
+    <div id="nav">
+        <button class="Button" onclick = location.href="../index.html">MAIN</button>
+        <button class="Button" onclick = location.href="../cloth/cloth.html">CLOTH</button>
+        <button class="Button" onclick = location.href="../house/house.html">HOUSE</button>
+        <button class="Button" onclick = location.href="../medic/medic.html">MEDIC</button>
+        <button class="Button" onclick = location.href="../food/food.html">FOOD</button>
+        <button class="Button" onclick = location.href="../payment.html">PAYMENT</button>
+        <button class="Button" onclick = location.href="../other/other.html">OTHER</button>
+        
+    </div>
+    
+    <div id="content">
+        
+        <!-- left frame -->
+        <div id="leftFrame">
+            <div id="productImage">
+                <img src="../image/clothE.jpg" id="productE" name="clothE" class="thumbnail" alt="clothE</br>Price:$200">
+            </div>
+        </div>
+        
+		<!-- Right frame -->
+        <div id="rightFrame">
+                
+            <div id="payBackButton">
+                <div>
+                    <button class ="button paymentButton" onclick="goToPayment();">
+                        Payment
+                    </button>
 
+                    <button class ="button backButton" onclick="goBack();">
+                       Back
+                    </button>
+                    
+                </div>
+            </div>
+            
+            <div id="productDetail">
+                Product Details of Cloth E:<br>
+                Price : $200<br>
+                Element: Cotton - 50%, Fiber - 50%<br>
+            </div>
+        </div>
+    </div>
+    
 
-
+    
 </body>
+    <script>
+        function goToPayment(){
+            location.href="../payment.html";
+        }
+        
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+    
 </html>

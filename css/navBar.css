@@ -13,7 +13,7 @@
         }
         
          #nav > button {
-            font-size: 55px;
+            font-size: 2em;
             text-align: center;
             width: calc(100% / 6);
         }
