@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Food</title>
-    
+
     <link rel="stylesheet" href="../css/category.css">
-    
+
 </head>
 
 <body>
+<!-- navigation bar-->
+    <div id="nav">
+        <div><a href="../index.html">MAIN</a></div>
+        <div><a href="../cloth/cloth.html">CLOTH</a></div>
+        <div><a href="../house/house.html">HOUSE</a></div>
+        <div><a href="../medic/medic.html">MEDIC</a></div>
+        <div><a href="../food/food.html">FOOD</a></div>
+        <div><a href="../payment.html">PAYMENT</a></div>
+        <div><a href="../other/other.html">OTHER</a></div>
+    </div>
 
-<div id="zoom">
-    <a id="productLink">
-    <img id="zoomImage">
-    </a>
-    <p id="imageDescription"></p>
-</div>
+    <div id="bigblock">
+        <div id="mainframe">
+            <div id="button">
+                </br>
+                FOOD
+            </div>
+            <div id="product">
+                <div id="zoom">
+                    <a id="productLink">
+                        <img id="zoomImage">
+                    </a>
+                    <p id="imageDescription"></p>
+                </div>
 
-<div id="list">
-    <img src="../image/foodA.jpg" id="productA" name="foodA" class="thumbnail" onclick="zoom(this)" alt="foodA</br>Price:$100">
-    <img src="../image/foodB.jpg" id="productB" name="foodB" class="thumbnail" onclick="zoom(this)" alt="foodB</br>Price:$200">
-    <img src="../image/foodC.jpg" id="productC" name="foodC" class="thumbnail" onclick="zoom(this)" alt="foodC</br>Price:$300">
-    <img src="../image/foodD.jpg" id="productD" name="foodD" class="thumbnail" onclick="zoom(this)" alt="foodD</br>Price:$299">
-    <img src="../image/foodE.jpg" id="productE" name="foodE" class="thumbnail" onclick="zoom(this)" alt="foodE</br>Price:$99">
-    <img src="../image/foodF.jpg" id="productF" name="foodF" class="thumbnail" onclick="zoom(this)" alt="foodF</br>Price:$20"">
-</div>
+                <div id="list">
+                    <img src="../image/foodA.jpg" id="productA" name="foodA" class="thumbnail" onclick="zoom(this)" alt="foodA</br>Price:$100">
+                    <img src="../image/foodB.jpg" id="productB" name="foodB" class="thumbnail" onclick="zoom(this)" alt="foodB</br>Price:$200">
+                    <img src="../image/foodC.jpg" id="productC" name="foodC" class="thumbnail" onclick="zoom(this)" alt="foodC</br>Price:$300">
+                    <img src="../image/foodD.jpg" id="productD" name="foodD" class="thumbnail" onclick="zoom(this)" alt="foodD</br>Price:$299">
+                    <img src="../image/foodE.jpg" id="productE" name="foodE" class="thumbnail" onclick="zoom(this)" alt="foodE</br>Price:$99">
+                    <img src="../image/foodF.jpg" id="productF" name="foodF" class="thumbnail" onclick="zoom(this)" alt="foodF</br>Price:$20">
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../javascript/zoom.js"></script>
 </body>
+
 </html>
