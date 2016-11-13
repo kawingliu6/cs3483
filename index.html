@@ -2,7 +2,24 @@
 
 <head>
     <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="css/slideshow.css">
     <style>
+        body{
+            background-image: url("image/background.jpg");
+            background-size: 100% 100%;
+            background-color:black;
+        }
+        
+        #container{
+            background: #F8F8FF;
+            width: 1300px;
+            height: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        
         #heading {
             width: 100%;
             height: 20%;
@@ -10,13 +27,14 @@
             border-style: solid;
             border-width: 2px;
             display: flex;
-            position: absolute;
+            position: relative;
             top: 0;
             text-align: center;
             font-size: xx-large;
         }
         
         #titlebar {
+            background-image: url("image/title.png");
             width: 80%;
             height: 100%;
             border-color: black;
@@ -36,7 +54,7 @@
             width: 100%;
             height: 79%;
             display: flex;
-            position: absolute;
+            position: relative;
             bottom: 0;
             border-width: 2px;
             border-color: black;
@@ -54,18 +72,21 @@
         }
         
         #search {
+            background: #59CB29;
+            vertical-align:middle;
+            line-height: 40px;
             width: 100%;
-            height: 20%;
+            height: 10%;
+            font-size:20px;
             border-color: black;
             border-style: solid;
             border-width: 1px;
             float: left;
-            clear: both;
         }
         
         #advertisement {
             width: 100%;
-            height: 80%;
+            height: 89%;
             border-color: black;
             border-style: solid;
             border-width: 1px;
@@ -82,6 +103,7 @@
         }
         
         #items {
+            background-color:#79A1FF;
             width: 100%;
             height: 80%;
             border-color: black;
@@ -91,35 +113,36 @@
             clear: both;
         }
         
-        #items > div {
-            border-style: solid;
-            border-width: 1px;
-            margin: 5% 5% 5% 5%;
-        }
-        
         #contact {
             width: 100%;
-            height: 20%;
+            height: 19%;
             border-color: black;
             border-style: solid;
             border-width: 1px;
             float: left;
             clear: both;
         }
+        
+        #search_bar{
+            width:80%;
+        }
+        
+        .icons{
+            height:55px;
+            padding:5px;
+        }
+        
     </style>
 </head>
 
 <body>
-
+    <div id="container">
     <!-- whole block of Elderly Shopping Mall & Login, which is 20% height -->
     <div id="heading">
         <div id="titlebar">
-            </br>
-            Elderly Shopping Mall
         </div>
         <div id="login">
-            </br>
-            <a href="login.html">LOGIN</a>
+            <a href="login.html"><img src="image/button1.png" alt="login"></a>
         </div>
     </div>
 
@@ -129,31 +152,64 @@
 	    <!-- left block, including search & Advertisement -->
         <div id="mainframe">
             <div id="search">
-                </br>
-                <a href="search.html">SEARCH</a>
+            <input type="text" id="search_bar" placeholder="Search here...">
+                <a href="search.html"><img src="image/button3.png" alt="search" style="height:35px;vertical-align:middle;"></a>
             </div>
+        
+        
+        <!--dvertisement -->
             <div id="advertisement">
-                Advertisement
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="image/foodA.jpg" style="width:100%;vertical-align: middle;">
+                    <div class="text">foodA</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="image/houseB.jpg" style="width:100%">
+                      <div class="text">houseB</div>
+                    </div>
+                  
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="image/otherC.jpg" style="width:100%">
+                      <div class="text">otherC</div>
+                    </div>
+                  </div>
+                  <br>
+                  
+                  <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                  </div>
+                    
             </div>
         </div>
 		
+        
+        
+        
+        
+        
 		<!-- right block, including items & contact -->
         <div id="category">
             <div id="items">
                 </br>
-                <div><a href="cloth/cloth.html">CLOTH</a></div>
-                <div><a href="house/house.html">HOUSE</a></div>
-                <div><a href="medic/medic.html">MEDIC</a></div>
-                <div><a href="food/food.html">FOOD</a></div>
-                <div><a href="payment.html">PAYMENT</a></div>
-                <div><a href="other/other.html">OTHER</a></div>
+                <a href="cloth/cloth.html"><img src="image/button7.png" alt="cloth" class="icons"></a>
+                <a href="house/house.html"><img src="image/button5.png" alt="search" class="icons"></a>
+                <a href="medic/medic.html"><img src="image/button6.png" alt="search" class="icons"></a>
+                <a href="food/food.html"><img src="image/button4.png" alt="search" class="icons"></a>
+                <a href="other/other.html"><img src="image/button8.png" alt="search" class="icons"></a>
             </div>
             <div id="contact">
-                </br>
-                <a href="contact.html">CONTACT</a>
+                <a href="contact.html"><img src="image/button2.png" alt="contact"></a>
             </div>
         </div>
     </div>
+</div>
 </body>
-
+<script src="javascript/slideshow.js"></script>
 </html>
