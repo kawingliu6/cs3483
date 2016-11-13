@@ -4,31 +4,15 @@
 
 <head>
     <title>Search</title>
+	<link rel="stylesheet" href="css/navBar.css">
+	
     <style>
         body,
         html {
             height: 100%;
         }
         
-        #nav {
-            width: 100%;
-            height: 20%;
-            border-color: black;
-            border-style: solid;
-            border-width: 2px;
-            text-align: center;
-            font-size: xx-large;
-            display: flex;
-            position: absolute;
-            top: 0;
-        }
-        
-        #nav > div {
-            border-style: solid;
-            border-width: 1px;
-            margin: 2% 2% 2% 2%;
-            text-align: center;
-        }
+       
         
         #mainframe {
             width: 100%;
@@ -68,16 +52,17 @@
 </head>
 
 <body>
-    <!-- navigation bar -->
+        <!-- navigation bar-->
     <div id="nav">
-        <div><a href="index.html">MAIN</a></div>
-        <div><a href="cloth/cloth.html">CLOTH</a></div>
-        <div><a href="house/house.html">HOUSE</a></div>
-        <div><a href="medic/medic.html">MEDIC</a></div>
-        <div><a href="food/food.html">FOOD</a></div>
-        <div><a href="payment.html">PAYMENT</a></div>
-        <div><a href="other/other.html">OTHER</a></div>
+        <button class="Button" onclick = location.href="index.html">MAIN</button>
+        <button class="Button" onclick = location.href="cloth/cloth.html">CLOTH</button>
+        <button class="Button" onclick = location.href="house/house.html">HOUSE</button>
+        <button class="Button" onclick = location.href="medic/medic.html">MEDIC</button>
+        <button class="Button" onclick = location.href="food/food.html">FOOD</button>
+        <button class="Button" onclick = location.href="payment.html">PAYMENT</button>
+        <button class="Button" onclick = location.href="other/other.html">OTHER</button>
     </div>
+	
 	<!-- whoole block below navigation bar -->
     <div id="mainframe">
 	    <!-- left block: search in green color -->
