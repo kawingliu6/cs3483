@@ -1,107 +1,114 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Contact</title>
-    
-<style>
 
-  #nav{
-  width:100%;
-  height:20%;
-  border-color:black;
-         border-style: solid;
-         border-width:2px;
-         text-align:center;
-         font-size:xx-large;
-		 display:flex;
-         position:absolute;
-         top:0;
-  }
-  
-  #nav > div {
-		 border-style: solid;
-         border-width:1px;
-		 margin:2% 2% 2% 2%;
-		 text-align:center;
-		 }
-  
-  #mainframe{
-         width:100%;
-         height:79%;
-         display:flex;
-         position:absolute;
-         bottom:0;
-         border-width:2px;
-         border-color:black;
-         border-style: solid;
-         }
-		 
-		 #conv_interface{
-         width:50%;
-         height:100%;
-         border-color:black;
-         border-style: solid;
-         border-width:1px;
-         }
-		 
-		 #other_con{
-         width:50%;
-         height:100%;
-         border-color:black;
-         border-style: solid;
-         border-width:1px;
-		 text-align:center;
-         font-size:xx-large;
-         } 
-    
-    #demo{
-        height: 500px;
-        width:500px;
-    }
-    
-    input{
-        width: 600px;
-    }
-    
-    .voice{
-        width: 80px;
-    }
-</style>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"> </script>
-    
+    <style>
+        #nav {
+            width: 100%;
+            height: 20%;
+            border-color: black;
+            border-style: solid;
+            border-width: 2px;
+            text-align: center;
+            font-size: xx-large;
+            display: flex;
+            position: absolute;
+            top: 0;
+        }
+        
+        #nav > div {
+            border-style: solid;
+            border-width: 1px;
+            margin: 2% 2% 2% 2%;
+            text-align: center;
+        }
+        
+        #mainframe {
+            width: 100%;
+            height: 79%;
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            border-width: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+        
+        #conv_interface {
+            width: 50%;
+            height: 100%;
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+        }
+        
+        #other_con {
+            width: 50%;
+            height: 100%;
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+            font-size: xx-large;
+        }
+        
+        #demo {
+            height: 500px;
+            width: 500px;
+        }
+        
+        input {
+            width: 600px;
+        }
+        
+        .voice {
+            width: 80px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+    </script>
+
 </head>
 
 <body>
-
-<div id="nav">
-</br>
-<div><a href="index.html">MAIN</a></div>
-               <div><a href="cloth/cloth.html">CLOTH</a></div>
-			   <div><a href="house/house.html">HOUSE</a></div>
-			   <div><a href="medic/medic.html">MEDIC</a></div>
-			   <div><a href="food/food.html">FOOD</a></div>
-			   <div><a href="payment.html">PAYMENT</a></div>
-			   <div><a href="other/other.html">OTHER</a></div>
-</div>
-<div id="mainframe">
-<div id="conv_interface">
-<div id="demo"></div>
     
-</br>
+	<!-- navigation bar -->
+    <div id="nav">
+        </br>
+        <div><a href="index.html">MAIN</a></div>
+        <div><a href="cloth/cloth.html">CLOTH</a></div>
+        <div><a href="house/house.html">HOUSE</a></div>
+        <div><a href="medic/medic.html">MEDIC</a></div>
+        <div><a href="food/food.html">FOOD</a></div>
+        <div><a href="payment.html">PAYMENT</a></div>
+        <div><a href="other/other.html">OTHER</a></div>
+    </div>
+	
+	<!-- whole block below navigation bar -->
+    <div id="mainframe">
+	    <!-- left block: conversation interface -->
+        <div id="conv_interface">
+            <div id="demo"></div>
 
-<input type="text" id="chatroom" placeholder="Ask question here..." >
-<button onclick="myFunction()">Send</button>
-</div>
+            </br>
 
-<div id="other_con">
-Other Contact Detail
-</div>
-</div>
+            <input type="text" id="chatroom" placeholder="Ask question here...">
+            <button onclick="myFunction()">Send</button>
+        </div>
+		
+		<!-- right block: other contact detail -->
+        <div id="other_con">
+            Other Contact Detail
+        </div>
+    </div>
 
-<script src="javascript/conversation.js"></script>
-<script src="javascript/speech.js"></script>
+    <script src="javascript/conversation.js"></script>
+    <script src="javascript/speech.js"></script>
 
 </body>
+
 </html>

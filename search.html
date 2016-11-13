@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Search</title>
     <style>
-        body,html{
-            height:100%;
-        }
-		#nav{
-  width:100%;
-  height:20%;
-  border-color:black;
-         border-style: solid;
-         border-width:2px;
-         text-align:center;
-         font-size:xx-large;
-		 display:flex;
-         position:absolute;
-         top:0;
-  }
-  
-    #nav > div {
-		 border-style: solid;
-         border-width:1px;
-		 margin:2% 2% 2% 2%;
-		 text-align:center;
-		 }
-  
-  #mainframe{
-         width:100%;
-         height:79%;
-         border-color:black;
-         border-style: solid;
-         border-width:2px;
-		 display:flex;
-         position:absolute;
-         bottom:0;
-         }
-  
-        #preview{
-            height:450px;
-        }
-        #search{
-            background-color:green;
-            display:inline-block;
-            width:50%;
+        body,
+        html {
             height: 100%;
-			border-color:black;
-         border-style: solid;
-         border-width:1px;
         }
-        #result{
-            background-color:red;
-            display:inline-block;
-            width:50%;
+        
+        #nav {
+            width: 100%;
+            height: 20%;
+            border-color: black;
+            border-style: solid;
+            border-width: 2px;
+            text-align: center;
+            font-size: xx-large;
+            display: flex;
+            position: absolute;
+            top: 0;
+        }
+        
+        #nav > div {
+            border-style: solid;
+            border-width: 1px;
+            margin: 2% 2% 2% 2%;
+            text-align: center;
+        }
+        
+        #mainframe {
+            width: 100%;
+            height: 79%;
+            border-color: black;
+            border-style: solid;
+            border-width: 2px;
+            display: flex;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        #preview {
+            height: 450px;
+        }
+        
+        #search {
+            background-color: green;
+            display: inline-block;
+            width: 50%;
             height: 100%;
-			border-color:black;
-         border-style: solid;
-         border-width:1px;
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+        }
+        
+        #result {
+            background-color: red;
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
         }
     </style>
 </head>
 
 <body>
-<div id="nav">
-               <div><a href="index.html">MAIN</a></div>
-               <div><a href="cloth/cloth.html">CLOTH</a></div>
-			   <div><a href="house/house.html">HOUSE</a></div>
-			   <div><a href="medic/medic.html">MEDIC</a></div>
-			   <div><a href="food/food.html">FOOD</a></div>
-			   <div><a href="payment.html">PAYMENT</a></div>
-			   <div><a href="other/other.html">OTHER</a></div>
-</div>
-<div id="mainframe">
-<div id="search">
-<input type="file" accept="image/*" onchange="searchProduct(event)">
+    <!-- navigation bar -->
+    <div id="nav">
+        <div><a href="index.html">MAIN</a></div>
+        <div><a href="cloth/cloth.html">CLOTH</a></div>
+        <div><a href="house/house.html">HOUSE</a></div>
+        <div><a href="medic/medic.html">MEDIC</a></div>
+        <div><a href="food/food.html">FOOD</a></div>
+        <div><a href="payment.html">PAYMENT</a></div>
+        <div><a href="other/other.html">OTHER</a></div>
+    </div>
+	<!-- whoole block below navigation bar -->
+    <div id="mainframe">
+	    <!-- left block: search in green color -->
+        <div id="search">
+            <input type="file" accept="image/*" onchange="searchProduct(event)">
 
-</br>
-<img id="preview"/>
-</div>
+            </br>
+            <img id="preview" />
+        </div>
+		<!-- right block: result in red color -->
+        <div id="result">
 
-<div id="result">
-    
-</div>
-</div>
+        </div>
+    </div>
 </body>
 
 <script src="javascript/search.js"></script>
+
 </html>
