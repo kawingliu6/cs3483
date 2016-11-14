@@ -8,11 +8,26 @@
 	<link rel="stylesheet" href="css/navBar.css">
 
     <style>
+		body{
+            background-image: url("image/background.jpg");
+            background-size: 100% 100%;
+            background-color:black;
+        }
+        
+        #container{
+            background: #F8F8FF;
+            width: 1300px;
+            height: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+		
         #mainframe {
             width: 100%;
-            height: 79%;
+			height: 100%;
             display: flex;
-            position: absolute;
             bottom: 0;
             border-width: 2px;
             border-color: black;
@@ -20,14 +35,17 @@
         }
         
         #conv_interface {
+			background-color:red;
             width: 50%;
             height: 100%;
+			text-align: center;
             border-color: black;
             border-style: solid;
             border-width: 1px;
         }
         
         #other_con {
+			background-color:green;
             width: 50%;
             height: 100%;
             border-color: black;
@@ -38,17 +56,36 @@
         }
         
         #demo {
-            height: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 30px;
+			background-color: white;
+            height: 450px;
             width: 500px;
+			border-color: black;
+            border-style: solid;
+            border-width: 3px;
+			text-align: left;
+			line-height: 30px;
+			overflow: scroll;
         }
         
         input {
-            width: 600px;
+            width: 500px;
         }
         
         .voice {
             width: 80px;
         }
+		
+		#map{
+			margin: auto;
+			margin-top:20px;
+		}
+		
+		#other_text{
+			margin-top: 40px;
+		}
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
@@ -68,27 +105,31 @@
         <button class="Button" onclick = location.href="payment.html">PAYMENT</button>
         <button class="Button" onclick = location.href="other/other.html">OTHER</button>
     </div>
-	
+	<div id="container">
 	<!-- whole block below navigation bar -->
     <div id="mainframe">
 	    <!-- left block: conversation interface -->
         <div id="conv_interface">
+			<h1>Conversation Interface</h1>
             <div id="demo"></div>
-
             </br>
-
             <input type="text" id="chatroom" placeholder="Ask question here...">
             <button onclick="myFunction()">Send</button>
         </div>
 		
 		<!-- right block: other contact detail -->
         <div id="other_con">
+			<div id="other_text">
             Other Contact Detail
+			<div id="map" style="width:70%;height:400px"></div>
+			</div>
         </div>
     </div>
-
+	</div>
     <script src="javascript/conversation.js"></script>
     <script src="javascript/speech.js"></script>
+	<script src="javascript/map.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
 </body>
 

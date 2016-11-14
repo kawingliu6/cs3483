@@ -1,3 +1,7 @@
+    window.onload = function(){
+        document.getElementById("demo").innerHTML += "A: hi, you can ask question in here! I may answer your question!\n";
+    }
+
 function myFunction() {
     var x = document.getElementById("chatroom").value;
     
@@ -45,5 +49,6 @@ function myFunction() {
     document.getElementById("demo").innerHTML += "A: Sorry, I dont understand. \n"+ '<input type="button" class="voice" name="Sorry, I dont understand" value="Play voice!" onClick="return testFunction(this)" />'+"</br>";
     }
     
-    document.getElementById("chatroom").value="";
+    document.getElementById("demo").scrollTop = document.getElementById("demo").scrollHeight - document.getElementById("demo").getBoundingClientRect().height; //scroll to bottom
+    document.getElementById("chatroom").value=""; //clear input box value
 }
