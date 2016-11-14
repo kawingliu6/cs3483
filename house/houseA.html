@@ -4,8 +4,8 @@
 <head>
     <title>House A</title>
     <link rel="stylesheet" href="../css/navBar.css">
-     <link rel="stylesheet" href="../css/productDetails.css">
-   <style>
+    <link rel="stylesheet" href="../css/productDetails.css">
+    <style>
         #leftFrame{
             float: left;
             width: 50%;
@@ -22,6 +22,11 @@
 </head>
 
 <body>
+	
+	<div id="banner">
+    <img src="../image/title.png" id="banner_img">
+	</div>
+		
     <!-- navigation bar-->
     <div id="nav">
         <button class="Button" onclick = location.href="../index.html">MAIN</button>
@@ -29,18 +34,16 @@
         <button class="Button" onclick = location.href="../house/house.html">HOUSE</button>
         <button class="Button" onclick = location.href="../medic/medic.html">MEDIC</button>
         <button class="Button" onclick = location.href="../food/food.html">FOOD</button>
-        <button class="Button" onclick = location.href="../payment.html">PAYMENT</button>
         <button class="Button" onclick = location.href="../other/other.html">OTHER</button>
+		<button class="Button" onclick = location.href="../contact.html">CONTACT</button>
         
     </div>
     
-    <div id="content">
+    <div id="container">
         
         <!-- left frame -->
         <div id="leftFrame">
-            <div id="productImage">
-                <img src="../image/houseA.jpg" id="productA" name="HouseE" class="thumbnail" alt="HouseA</br>Price:$200">
-            </div>
+                <img src="../image/houseA.jpg" id="productImage" name="houseA" class="thumbnail" alt="houseA</br>Price:$200">
         </div>
         
 		<!-- Right frame -->
@@ -48,11 +51,11 @@
                 
             <div id="payBackButton">
                 <div>
-                    <button class ="button paymentButton" onclick="goToPayment();">
+                    <button class ="button" id="pay" onclick="goToPayment();">
                         Payment
                     </button>
 
-                    <button class ="button backButton" onclick="goBack();">
+                    <button class ="button" id="back" onclick="goBack();">
                        Back
                     </button>
                     
@@ -62,7 +65,6 @@
             <div id="productDetail">
                 Product Details of House A:<br>
                 Price : $200<br>
-
             </div>
         </div>
     </div>
