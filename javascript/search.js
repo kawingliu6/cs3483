@@ -119,7 +119,15 @@
         if (window.location.href.includes("?")) {
           var url = window.location.href.split("?");
           var searchText=url[1];
+          
+          
+          var image = new Image();
+          image.src = 'image/'+searchText+'.jpg';
+          image.style.height = '200px';
+          document.getElementById('result').appendChild(image);
             
+          image.onerror = function () {
+        
           var img = new Array(5);
           if (searchText.includes("other")) {
               for(i=0;i<6;i++){
@@ -164,4 +172,5 @@
             document.getElementById('result').innerHTML="no result found";
           }
         }
+    }
   }
