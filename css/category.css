@@ -110,3 +110,16 @@
             margin-right:20px;
         }
         
+        #banner{
+            width:100%;
+            padding-bottom: 20px;
+            padding-top:20px;
+            text-align: center;
+        }
+        
+        #banner_img{
+            border-width: 5px;
+            border-color: black;
+            border-style: solid;
+        }
+        
