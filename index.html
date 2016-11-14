@@ -153,7 +153,7 @@
         <div id="mainframe">
             <div id="search">
             <input type="text" id="search_bar" placeholder="Search here...">
-                <a href="search.html"><img src="image/button3.png" alt="search" style="height:35px;vertical-align:middle;"></a>
+            <img src="image/button3.png" alt="search" style="height:35px;vertical-align:middle;" onclick=search()>
             </div>
         
         
@@ -212,4 +212,13 @@
 </div>
 </body>
 <script src="javascript/slideshow.js"></script>
+<script>
+    var search = function(){
+        if (!document.getElementById("search_bar").value) {
+            window.location.href = "search.html";
+            return;
+        }
+        window.location.href = "search.html?"+document.getElementById("search_bar").value;
+    }
+</script>
 </html>
