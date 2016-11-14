@@ -51,12 +51,14 @@
             border-width: 2px;
             display: flex;
             bottom: 0;
+            overflow: hidden;
         }
         
         #login {
 			background-color:#FDFFA8;
             width: 50%;
             height: 100%;
+            padding-top:40px;
             border-color: black;
             border-style: solid;
             border-width: 1px;
@@ -114,6 +116,12 @@
 	    <!-- left block: LOGIN -->
         <div id="login">
             LOGIN
+            <p>- you can login with normal method</br>
+               - you can also login with camera
+            </p>
+            Account: <input type="text" id="account"></br>
+            Password: <input type="password" id="password"></br>
+            <input type="button" id="submit_2" value="Login" onclick="loginByText()" />
         </div>
 		<!-- right block: camera block -->
         <div id="camera_block">
@@ -121,7 +129,7 @@
                 <video id="video" width="640" height="480" preload autoplay loop muted></video>
                 <canvas id="canvas" width="640" height="480"></canvas>
             </div>
-            <input type="button" id="submit" value="Login" />
+            <input type="button" id="submit" value="Login" onclick="loginByCamera()" />
         </div>
     </div>
 </div>
@@ -167,6 +175,21 @@
             gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
             gui.add(tracker, 'stepSize', 1, 5).step(0.1);
         };
+        
+        function loginByCamera(){
+          window.alert("Login Success! Now returning to homepage.");
+          window.location.href = "index.html?justin";
+        }
+        
+        function loginByText(){
+          var account = document.getElementById("account").value;
+          if (!account) {
+              window.alert("Login Fail.");
+              return;
+          }
+          window.alert("Welcome "+account+"! Now returning to homepage.");
+          window.location.href = "index.html?"+account;
+        }
     </script>
 
 </body>
