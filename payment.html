@@ -5,35 +5,60 @@
     <meta charset="utf-8">
     <title>tracking.js - face with camera</title>
 	<link rel="stylesheet" href="css/navBar.css">
-	
-	
+
+
     <script src="javascript/tracking/build/tracking-min.js"></script>
     <script src="javascript/tracking/build/data/face-min.js"></script>
 
     <style>
         video,
         canvas {
-            margin-left: 0px;
-            margin-top: 0px;
+            display: inline;
+            height:480px;
+            width:640px;
+            margin-left: 5px;
+            margin-top: 20px;
             position: absolute;
         }
         
-      
+        #submit{
+            position:absolute;
+            margin-left: 300px;
+            bottom:-200px;
+        }
+        
+        body{
+            background-image: url("image/background.jpg");
+            background-size: 100% 100%;
+            background-color:black;
+        }
+        
+        #container{
+            background: #F8F8FF;
+            width: 1300px;
+            height: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
         
         #mainframe {
             width: 100%;
-            height: 79%;
+            height: 100%;
             border-color: black;
             border-style: solid;
             border-width: 2px;
             display: flex;
-            position: absolute;
             bottom: 0;
+            overflow: hidden;
         }
         
-        #payment {
+        #login {
+			background-color:#FDFFA8;
             width: 50%;
             height: 100%;
+            padding-top:40px;
             border-color: black;
             border-style: solid;
             border-width: 1px;
@@ -44,17 +69,36 @@
         }
         
         #camera_block {
+			background-color:#9FF55E;
             width: 50%;
             height: 100%;
             border-color: black;
             border-style: solid;
             border-width: 1px;
         }
+        
+		#banner{
+            width:100%;
+            margin-bottom: 20px;
+            margin-top:20px;
+            text-align: center;
+        }
+		
+		#banner_img{
+            border-width: 5px;
+            border-color: black;
+            border-style: solid;
+        }
+        
     </style>
 </head>
 
 <body>
-
+  
+    <div id="banner">
+    <img src="image/title.png" id="banner_img">
+	</div>
+  
       <!-- navigation bar-->
     <div id="nav">
         <button class="Button" onclick = location.href="index.html">MAIN</button>
@@ -65,33 +109,46 @@
         <button class="Button" onclick = location.href="payment.html">PAYMENT</button>
         <button class="Button" onclick = location.href="other/other.html">OTHER</button>
     </div>
-	
-    <!-- whole block below navigation bar-->
+
+	<!-- whole block below navigation bar -->
+    <div id="container">
     <div id="mainframe">
-
-        <!-- left block Payment Detail -->
-        <div id="payment">
-            Payment Detail
+	    <!-- left block: LOGIN -->
+        <div id="login">
+            Payment
+			<p id="paymentDetail"></p>
+            <p>- you can login with normal method</br>
+               - you can also login with camera
+            </p>
+            Card Number: <input type="text" id="account"></br>
+            Password: <input type="password" id="password"></br>
+            <input type="button" id="submit_2" value="Login" onclick="loginByText()" />
         </div>
-		
-        <!-- right block Payment Detail -->
+		<!-- right block: camera block -->
         <div id="camera_block">
-            <div class="demo-frame">
-                <div class="demo-container">
-                    <video id="video" width="320" height="240" preload autoplay loop muted></video>
-                    <canvas id="canvas" width="320" height="240"></canvas>
-                </div>
+            <div>
+                <video id="video" width="640" height="480" preload autoplay loop muted></video>
+                <canvas id="canvas" width="640" height="480"></canvas>
             </div>
+            <input type="button" id="submit" value="Login" onclick="loginByCamera()" />
         </div>
-
     </div>
-
+</div>
     <script>
         window.onload = function() {
             var video = document.getElementById('video');
             var canvas = document.getElementById('canvas');
             var context = canvas.getContext('2d');
+            document.getElementById("submit").disabled = true;
 
+			if (window.location.href.includes("?")) {
+            var url = window.location.href.split("?");
+            var productDetail=url[1];
+			
+			var details = productDetail.split("%3C/br%3E");
+			document.getElementById("paymentDetail").innerHTML=details[0]+"</br>"+details[1];
+			}
+			
             var tracker = new tracking.ObjectTracker('face');
             tracker.setInitialScale(4);
             tracker.setStepSize(2);
@@ -101,10 +158,13 @@
                 camera: true
             });
 
-            tracker.on('track', function(event) {
-                context.clearRect(0, 0, canvas.width, canvas.height);
+            var count = 0;
 
+            tracker.on('track', function(event) {
+                count = 0;
+                context.clearRect(0, 0, canvas.width, canvas.height);
                 event.data.forEach(function(rect) {
+                    count = 1;
                     context.strokeStyle = '#a64ceb';
                     context.strokeRect(rect.x, rect.y, rect.width, rect.height);
                     context.font = '11px Helvetica';
@@ -112,6 +172,11 @@
                     context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
                     context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
                 });
+                if (count == 1) {
+                    document.getElementById("submit").disabled = false;
+                } else {
+                    document.getElementById("submit").disabled = true;
+                }
             });
 
             var gui = new dat.GUI();
@@ -119,6 +184,21 @@
             gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
             gui.add(tracker, 'stepSize', 1, 5).step(0.1);
         };
+        
+        function loginByCamera(){
+          window.alert("Payment Success! Now returning to homepage.");
+          window.location.href = "index.html?justin";
+        }
+        
+        function loginByText(){
+          var account = document.getElementById("account").value;
+          if (!account) {
+              window.alert("Payment Fail.");
+              return;
+          }
+          window.alert("Payment success! Now returning to homepage.");
+          window.location.href = "index.html";
+        }
     </script>
 
 </body>
