@@ -116,6 +116,8 @@
 }
 
   window.onload = function() {
+        var myNode = document.getElementById("result");
+    
         if (window.location.href.includes("?")) {
           var url = window.location.href.split("?");
           var searchText=url[1];
@@ -127,7 +129,8 @@
           document.getElementById('result').appendChild(image);
             
           image.onerror = function () {
-        
+          myNode.removeChild(myNode.firstChild);
+          
           var img = new Array(5);
           if (searchText.includes("other")) {
               for(i=0;i<6;i++){
