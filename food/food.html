@@ -4,57 +4,54 @@
 
 <head>
     <title>Food</title>
+	
+	<link rel="stylesheet" href="..//css/navBar.css">
+    <link rel="stylesheet" href="..//css/category.css">
 
-    <link rel="stylesheet" href="../css/category.css">
-	<link rel="stylesheet" href="../css/navBar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+    </script>
 
 </head>
 
 <body>
-    <!-- navigation bar-->
-   <!-- navigation bar-->
+    
+	    <!-- navigation bar-->
     <div id="nav">
         <button class="Button" onclick = location.href="../index.html">MAIN</button>
         <button class="Button" onclick = location.href="../cloth/cloth.html">CLOTH</button>
         <button class="Button" onclick = location.href="../house/house.html">HOUSE</button>
         <button class="Button" onclick = location.href="../medic/medic.html">MEDIC</button>
         <button class="Button" onclick = location.href="../food/food.html">FOOD</button>
-        <button class="Button" onclick = location.href="../payment.html">PAYMENT</button>
         <button class="Button" onclick = location.href="../other/other.html">OTHER</button>
-        
+		<button class="Button" onclick = location.href="../contact.html">CONTACT</button>
     </div>
-
-	<!-- whole block below navigation bar-->
-    <div id="bigblock">
-        <div id="mainframe">
-		    <!-- button -->
-            <div id="button">
-                </br>
-                FOOD
-            </div>
-			
-			<!-- whole block below food button -->
-            <div id="product">
-                <div id="zoom">
-                    <a id="productLink">
-                        <img id="zoomImage">
-                    </a>
-                    <p id="imageDescription"></p>
-                </div>
-
-				<!-- right block of images -->
-                <div id="list">
+	
+	
+	<div id="container">
+		<div id="title">
+			FOOD
+		</div>
+    <div id="mainframe">
+		
+        <div id="zoom">
+			<a id="productLink">
+                <img id="zoomImage">
+            </a>
+			<p id="imageDescription"></p>
+        </div>
+		
+			<div id="list">
+					<h1>- Click thumbnail to zoom in -</h1>
                     <img src="../image/foodA.jpg" id="productA" name="foodA" class="thumbnail" onclick="zoom(this)" alt="foodA</br>Price:$100">
                     <img src="../image/foodB.jpg" id="productB" name="foodB" class="thumbnail" onclick="zoom(this)" alt="foodB</br>Price:$200">
                     <img src="../image/foodC.jpg" id="productC" name="foodC" class="thumbnail" onclick="zoom(this)" alt="foodC</br>Price:$300">
                     <img src="../image/foodD.jpg" id="productD" name="foodD" class="thumbnail" onclick="zoom(this)" alt="foodD</br>Price:$299">
                     <img src="../image/foodE.jpg" id="productE" name="foodE" class="thumbnail" onclick="zoom(this)" alt="foodE</br>Price:$99">
                     <img src="../image/foodF.jpg" id="productF" name="foodF" class="thumbnail" onclick="zoom(this)" alt="foodF</br>Price:$20">
-                </div>
-            </div>
-        </div>
+			</div>
     </div>
-    <script src="../javascript/zoom.js"></script>
-</body>
+</div>
 
+</body>
+<script src="../javascript/zoom.js"></script>
 </html>
