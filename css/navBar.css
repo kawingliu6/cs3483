@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
 
         #nav {
             width: 100%;
@@ -13,6 +14,9 @@
         }
         
          #nav > button {
+            color:#222222;
+            background-color:#4FA5DE;
+            font-family: 'Righteous', cursive;
             font-size: 2em;
             text-align: center;
             width: calc(100% / 6);

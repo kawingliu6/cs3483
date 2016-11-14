@@ -15,5 +15,5 @@
          }if (img.id=="productF") {
             document.getElementById("imageDescription").innerHTML = img.alt;
          }
-         
+            document.getElementById("imageDescription").innerHTML += "</br> <u>- Click photo to look for details -</u>";
         }
